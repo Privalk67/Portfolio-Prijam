@@ -37,7 +37,7 @@ I'm a student interested in programming, web development, and building projects.
 - **GitHub:** https://github.com/Privalk67
 - **YouTube:** https://www.youtube.com/@Privalk1
 - **Instagram:** https://www.instagram.com/prijamnyaupane0/
-- **Portfolio:** https://www.prijam.netlify.app
+- **Portfolio:** [https://www.prijam.netlify.app](https://prijam.netlify.app/)
 ---
 
 *This portfolio is part of my ongoing learning journey. I'll update it as I gain new skills and build more projects.*
