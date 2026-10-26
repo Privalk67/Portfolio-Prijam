@@ -1,0 +1,220 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0e1220">
+<meta name="description" content="Prijam’s personal portfolio — a student learning to code, building projects, and exploring ideas.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="Prijam | Student Learning to Code">
+<meta property="og:description" content="A student learning to code, building projects, and sharing the journey.">
+<title>Prijam | Student Learning to Code</title>
+<link rel="icon" type="image/png" href="logo.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono&display=swap">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="style.css">
+<script src="script.js" defer></script>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+
+<header class="topbar">
+  <div class="wrap nav">
+    <a href="#home" class="brand" aria-label="Prijam home">
+      <img src="logo.png" alt="" class="brand-logo">
+      <span>Prijam<span class="brand-dot">.</span></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" type="button" aria-controls="navLinks" aria-expanded="false" aria-label="Toggle navigation">Menu</button>
+    <nav class="nav-links" id="navLinks" aria-label="Main navigation">
+      <a href="#about">About</a>
+      <a href="#learning">Learning</a>
+      <a href="#books">Books</a>
+      <a href="#achievements">Achievements</a>
+      <a href="#goals">Goals</a>
+      <a href="#tools">Tools</a>
+      <a href="code.html" class="nav-code">Code Library</a>
+      <a href="#contact">Contact</a>
+    </nav>
+    <button class="theme-toggle" id="themeToggle" type="button">Light</button>
+  </div>
+</header>
+
+<main id="main">
+
+<section id="home" class="hero">
+  <div class="wrap hero-grid">
+    <div>
+      <p class="now"><span class="dot"></span>Now learning CSS</p>
+      <h1>I’m Prijam, a student learning to code and build things.</h1>
+      <p class="hero-copy">I’m learning programming and exploring how technology works. This site is where I share what I’m learning, the books I read, and the goals I’m working toward.</p>
+      <div class="hero-actions">
+        <a href="#learning" class="btn primary">What I’m learning</a>
+        <a href="code.html" class="btn">Open the Code Library</a>
+      </div>
+      <p class="stack">HTML, CSS, Python, JavaScript and Luau. I learn by building.</p>
+    </div>
+
+    <div class="editor">
+      <div class="editor-top"><span class="dots"><i></i><i></i><i></i></span><span>hello.js</span></div>
+      <div class="code" role="img" aria-label="A small JavaScript example that prints your goal">
+        <span class="ln" style="--n:1"><span class="k">const</span> goal = <span class="s">"<span id="goalText">keep learning</span>"</span>;</span>
+        <span class="ln" style="--n:2">&nbsp;</span>
+        <span class="ln" style="--n:3"><span class="k">function</span> <span class="f">makeProgress</span>() {</span>
+        <span class="ln" style="--n:4">  <span class="k">return</span> goal;</span>
+        <span class="ln" style="--n:5">}</span>
+        <span class="ln" style="--n:6">&nbsp;</span>
+        <span class="ln" style="--n:7">console.log(<span class="f">makeProgress</span>());</span>
+        <span class="ln out" style="--n:8">&gt; <span id="goalOut">keep learning</span><span class="caret"></span></span>
+      </div>
+      <div class="editor-bar"><label for="goalInput">Change the goal</label><input id="goalInput" type="text" maxlength="28" value="keep learning" autocomplete="off"><button type="button" id="replay">Replay</button></div>
+    </div>
+  </div>
+</section>
+
+<section id="about">
+  <div class="wrap">
+    <div class="head"><h2>Curious by default.</h2></div>
+    <div class="about">
+      <div>
+        <p>I’m a student interested in programming, technology, and personal development. I like understanding how things work, then experimenting with them myself.</p>
+        <p>I’m still learning, so I don’t pretend to know everything. My goal is to keep improving, build projects independently, and learn from mistakes instead of giving up when something breaks.</p>
+      </div>
+      <dl class="facts">
+        <div><dt>Learning</dt><dd>Programming</dd></div>
+        <div><dt>Building</dt><dd>Small projects</dd></div>
+        <div><dt>Improving</dt><dd>Consistency</dd></div>
+        <div><dt>Approach</dt><dd>Learn by doing</dd></div>
+      </dl>
+    </div>
+  </div>
+</section>
+
+<section id="learning">
+  <div class="wrap">
+    <div class="head">
+      <h2>Skills in progress.</h2>
+      <p>Where I am with each one, stated honestly.</p>
+    </div>
+    <div class="filters" role="group" aria-label="Filter skills"><button type="button" class="filter" data-f="all" aria-pressed="true">All</button><button type="button" class="filter" data-f="web" aria-pressed="false">Web</button><button type="button" class="filter" data-f="programming" aria-pressed="false">Programming</button></div>
+    <ul class="skills">
+      <li data-tags="web"><h3>HTML</h3><p>Structuring pages and building the foundation of websites.</p><span class="stage">Basics</span></li>
+      <li data-tags="web"><h3>CSS</h3><p>Practising layouts, responsive design, spacing, and visual styling.</p><span class="stage">Basics</span></li>
+      <li data-tags="programming"><h3>Python</h3><p>Learning programming fundamentals and solving problems with code.</p><span class="stage">Beginner</span></li>
+      <li data-tags="programming"><h3>Luau</h3><p>Roblox scripting: variables, functions, events, and game logic.</p><span class="stage">Learning</span></li>
+      <li data-tags="web programming"><h3>JavaScript</h3><p>Making websites interactive with code.</p><span class="stage">Learning</span></li>
+      <li data-tags="programming"><h3>Problem solving</h3><p>Understanding why code works, not just copying a solution.</p><span class="stage">Ongoing practice</span></li>
+    </ul>
+  </div>
+</section>
+
+<section id="code-library">
+  <div class="wrap">
+    <div class="lib">
+      <div>
+        <h2>My code experiments live in the Code Library.</h2>
+        <p>Browse snippets and examples from what I’ve been practising in JavaScript, Python, and Luau. I add to it as I learn.</p>
+      </div>
+      <a href="code.html" class="btn primary">Explore the Code Library</a>
+    </div>
+  </div>
+</section>
+
+<section id="books">
+  <div class="wrap">
+    <div class="head">
+      <h2>Ideas worth keeping.</h2>
+      <p>Books I’ve read and ideas I’m still thinking about.</p>
+    </div>
+    <div class="books">
+      <article class="book">
+        <div class="cover warm" role="img" aria-label="Atomic Habits book cover"><img src="https://covers.openlibrary.org/b/isbn/9780735211292-L.jpg?default=false" alt="" loading="lazy" onerror="this.remove()"><span>ATOMIC<br>HABITS</span></div>
+        <div>
+          <h3>Atomic Habits</h3>
+          <p class="author">James Clear</p>
+          <p class="take">Small actions, repeated consistently, can lead to meaningful change.</p><details class="ideas"><summary>Key ideas</summary><ul><li>Aim to get 1% better each day; small gains compound.</li><li>Habits run on a loop: cue, craving, response, reward.</li><li>Focus on who you want to become, not only the result.</li></ul></details>
+        </div>
+      </article>
+      <article class="book">
+        <div class="cover green" role="img" aria-label="The Psychology of Money book cover"><img src="https://covers.openlibrary.org/b/isbn/9780857197689-L.jpg?default=false" alt="" loading="lazy" onerror="this.remove()"><span>THE<br>PSYCHOLOGY<br>OF MONEY</span></div>
+        <div>
+          <h3>The Psychology of Money</h3>
+          <p class="author">Morgan Housel</p>
+          <p class="take">How people think and behave can matter as much as what they know about money.</p><details class="ideas"><summary>Key ideas</summary><ul><li>Behaviour matters more than knowledge.</li><li>Luck and risk shape outcomes more than we admit.</li><li>Knowing when you have enough is a skill.</li></ul></details>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="achievements">
+  <div class="wrap">
+    <div class="head">
+      <h2>Progress worth noting.</h2>
+      <p>A few accomplishments from school and my learning journey.</p>
+    </div>
+    <ul class="wins">
+      <li><span class="ic" aria-hidden="true">⌘</span><div><h3>Class-level Python debugging competition</h3><p>Won by identifying and fixing coding errors.</p></div></li>
+      <li><span class="ic" aria-hidden="true">🥇</span><div><h3>Class race, Grade 7 and Grade 8</h3><p>Took 1st place in both years.</p></div></li>
+      <li><span class="ic" aria-hidden="true">&lt;/&gt;</span><div><h3>Web development practice</h3><p>Built webpages with HTML and CSS while developing my design skills.</p></div></li>
+    </ul>
+  </div>
+</section>
+
+<section id="goals">
+  <div class="wrap">
+    <div class="head">
+      <h2>What I’m working toward.</h2>
+      <p>Long-term progress comes from getting better at the basics and finishing things.</p>
+    </div>
+    <ul class="goals">
+      <li><h3>Improve my coding skills</h3><p>Build a strong foundation instead of rushing through topics.</p></li>
+      <li><h3>Build projects independently</h3><p>Get more confident turning an idea into something that works.</p></li>
+      <li><h3>Understand the code</h3><p>Use examples as a starting point, then learn how to adapt them.</p></li>
+      <li><h3>Use AI as a learning tool</h3><p>Ask better questions, check answers, and practise doing things myself.</p></li>
+    </ul>
+  </div>
+</section>
+
+<section id="tools">
+  <div class="wrap">
+    <div class="head">
+      <h2>What I use.</h2>
+      <p>The tools helping me learn, experiment, and make projects.</p>
+    </div>
+    <ul class="chips">
+      <li>VS Code</li><li>Roblox Studio</li><li>GitHub</li><li>HTML, CSS and JS</li><li>Python</li><li>MacBook</li>
+    </ul>
+  </div>
+</section>
+
+<section id="contact">
+  <div class="wrap">
+    <div class="lib">
+      <div>
+        <h2>Follow what I’m building.</h2>
+        <p>I’m documenting my learning journey and sharing projects as I make progress.</p>
+        <div class="socials">
+          <a href="https://github.com/Privalk67" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://www.youtube.com/@Privalk1" target="_blank" rel="noopener noreferrer">YouTube</a>
+          <a href="https://www.instagram.com/prijamnyaupane0/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        </div>
+      </div>
+      <a href="code.html" class="btn primary">Visit the Code Library</a>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a href="#home" class="brand footer-brand"><img src="logo.png" alt="" class="brand-logo"><span>Prijam<span class="brand-dot">.</span></span></a>
+    <span>© <span id="year"></span> Prijam. Built while learning.</span>
+    <a href="#home" class="back-top">Back to top</a>
+  </div>
+</footer>
+</body>
+</html>

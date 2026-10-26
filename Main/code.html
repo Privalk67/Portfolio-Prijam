@@ -1,0 +1,60 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#0e1220">
+<meta name="description" content="Programming practice examples by Prijam: JavaScript, Python and Luau.">
+<title>Code Library | Prijam</title>
+<link rel="icon" href="logo.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono&display=swap">
+<script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
+<link rel="stylesheet" href="code.css">
+<script src="code.js" defer></script>
+</head>
+<body>
+<header class="topbar">
+  <div class="wrap nav">
+    <a class="brand" href="index.html" aria-label="Back to Prijam’s portfolio"><img src="logo.png" alt="" class="brand-logo"><span>Prijam<span class="brand-dot">.</span></span></a>
+    <div class="nav-right"><a class="back" href="index.html">Back to portfolio</a><button class="theme-toggle" id="themeToggle" type="button">Light</button></div>
+  </div>
+</header>
+
+<main class="wrap">
+  <section class="page-hero">
+    <h1>Code Library<span class="brand-dot">.</span></h1>
+    <p class="intro">Small programs I use to practise. Run the JavaScript ones, play the number guessing game in your browser, and copy anything you want to try yourself.</p>
+  </section>
+
+  <section>
+    <div class="toolbar">
+      <label class="search"><span class="sr">Search examples</span><input id="search" type="search" placeholder="Search examples" autocomplete="off"></label>
+      <div class="chips" role="group" aria-label="Filter by language">
+        <button type="button" class="chip" data-f="all" aria-pressed="true">All</button>
+        <button type="button" class="chip" data-f="javascript" aria-pressed="false">JavaScript</button>
+        <button type="button" class="chip" data-f="python" aria-pressed="false">Python</button>
+        <button type="button" class="chip" data-f="luau" aria-pressed="false">Luau</button>
+      </div>
+      <p id="count" aria-live="polite"></p>
+    </div>
+    <div class="grid" id="grid"></div>
+    <p class="empty" id="empty" hidden>No examples match. Try a different search or language.</p>
+  </section>
+
+  <section class="note">
+    <h2>Understand the code, not just the output.</h2>
+    <p>These are practice pieces. I’m working toward understanding every line, changing the examples, and building projects on my own.</p>
+    <a class="back" href="index.html">Return to portfolio</a>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap foot">
+    <a href="index.html" class="brand footer-brand"><img src="logo.png" alt="" class="brand-logo"><span>Prijam<span class="brand-dot">.</span></span></a>
+    <span>© <span id="year"></span> Prijam. Practice makes progress.</span>
+  </div>
+</footer>
+</body>
+</html>
