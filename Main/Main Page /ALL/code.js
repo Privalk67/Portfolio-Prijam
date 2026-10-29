@@ -1,4 +1,3 @@
-
 const $ = (s, c = document) => c.querySelector(s);
 const $$ = (s, c = document) => [...c.querySelectorAll(s)];
 
@@ -7,13 +6,192 @@ $("#year").textContent = new Date().getFullYear();
 const LANG = {
   javascript: "JavaScript",
   python: "Python",
-  luau: "Luau"
+  luau: "Luau",
+  html: "HTML/CSS"
 };
 
 const EDITOR =
   "https://www.programiz.com/python-programming/online-compiler/";
 
 const examples = [
+  // ---------- HTML & CSS ----------
+
+  {
+    lang: "html",
+    level: "Project",
+    title: "Skiing website",
+    wide: true,
+    desc: "A one-page website about skiing, built with HTML and CSS. Visit the live site or copy the code.",
+    hint: "Save this as index.html and open it in your browser.",
+    site: "https://skiingwebsite.netlify.app/",
+    notes: [
+      "The navbar uses flexbox to keep the Home link on the left and the search bar on the right.",
+      "clamp() lets the main heading grow and shrink with the screen size.",
+      "The image uses width: 100% and max-width: 1000px so it never gets wider than the screen.",
+      "The media query at 480px adjusts the layout for phones."
+    ],
+    code: `<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>About Skiing</title>
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        /* Entire page */
+        body {
+            margin: 0;
+            background-color: lightblue;
+            font-family: Arial, Helvetica, sans-serif;
+            color: midnightblue;
+        }
+
+        /* Navigation bar */
+        .navbar {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 1rem;
+            background-color: white;
+            padding: 1rem 5%;
+        }
+
+        /* Home link */
+        .navbar h3 {
+            margin: 0;
+            font-size: 1.25rem;
+        }
+
+        a {
+            color: black;
+            text-decoration: none;
+        }
+
+        a:hover {
+            color: royalblue;
+        }
+
+        /* Search bar */
+        .searchbar {
+            width: min(100%, 220px);
+            padding: 0.65rem 0.8rem;
+            border: 1px solid #cbd5e1;
+            border-radius: 8px;
+            font: inherit;
+        }
+
+        .searchbar:focus {
+            outline: 2px solid royalblue;
+            outline-offset: 2px;
+        }
+
+        /* Main page content */
+        main {
+            padding: 1rem;
+        }
+
+        /* Main heading */
+        h1 {
+            margin: 2.5rem 0;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            text-align: center;
+            color: midnightblue;
+        }
+
+        /* Skiing image */
+        .hero-image {
+            display: block;
+            width: 100%;
+            max-width: 1000px;
+            height: auto;
+            margin: 0 auto;
+            border-radius: 12px;
+            object-fit: cover;
+        }
+
+        /* Description box */
+        .content-box {
+            width: min(90%, 800px);
+            margin: 2rem auto;
+            padding: clamp(1.25rem, 4vw, 2rem);
+            background-color: white;
+            border-radius: 12px;
+            font-size: 1.3rem;
+            line-height: 1.8;
+            color: #263449;
+        }
+
+        /* Small-screen adjustments */
+        @media (max-width: 480px) {
+            .navbar {
+                padding: 1rem;
+            }
+
+            .searchbar {
+                width: min(55%, 180px);
+            }
+
+            h1 {
+                margin: 2rem 0;
+            }
+
+            .content-box {
+                width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navigation bar -->
+    <nav class="navbar">
+        <h3>
+            <a href="#">Home</a>
+        </h3>
+
+        <input
+            class="searchbar"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+        >
+    </nav>
+
+    <main>
+
+        <!-- Page heading -->
+        <h1>About Skiing</h1>
+
+        <!-- Main skiing image -->
+        <img
+            class="hero-image"
+            src="https://images.pexels.com/photos/15944473/pexels-photo-15944473.jpeg?cs=srgb&dl=pexels-zakhar-15944473.jpg&fm=jpg"
+            alt="Snowy mountain skiing landscape"
+        >
+
+        <!-- Description -->
+        <section class="content-box">
+            Skiing is a popular winter sport that involves gliding down
+            snow-covered slopes on skis. It is enjoyed by people of all
+            ages and skill levels, with different styles including alpine
+            skiing, cross-country skiing, and freestyle skiing.
+
+            Skiing is a great way to stay active during winter while
+            enjoying the beauty of snowy landscapes.
+        </section>
+
+    </main>
+
+</body>
+</html>`
+  },
+
   // ---------- JAVASCRIPT ----------
 
   {
@@ -464,13 +642,39 @@ const CMT = {
 };
 
 const esc = s =>
-  String(s).replace(/[&<>]/g, c => ({
+  String(s).replace(/[&<>"']/g, c => ({
     "&": "&amp;",
     "<": "&lt;",
-    ">": "&gt;"
+    ">": "&gt;",
+    '"': "&quot;",
+    "'": "&#39;"
   }[c]));
 
+function highlightMarkup(code) {
+  const re = /(<!--[\s\S]*?-->|\/\*[\s\S]*?\*\/)|("[^"\n]*")|(<[!\/]?[a-zA-Z][\w-]*|\/?>)|\b(\d+(?:\.\d+)?(?:px|rem|em|vw|vh|%|s)?)/g;
+
+  let out = "";
+  let last = 0;
+  let match;
+
+  while ((match = re.exec(code))) {
+    out += esc(code.slice(last, match.index));
+
+    const cls = match[1] ? "c"
+      : match[2] ? "s"
+      : match[3] ? "k"
+      : "n";
+
+    out += `<span class="${cls}">${esc(match[0])}</span>`;
+    last = re.lastIndex;
+  }
+
+  return out + esc(code.slice(last));
+}
+
 function highlight(code, lang) {
+  if (lang === "html") return highlightMarkup(code);
+
   const keywords = KW[lang].split(" ").join("|");
 
   const re = new RegExp(
@@ -556,6 +760,10 @@ function card(e, i) {
     <div class="actions">
       ${e.play
         ? '<button type="button" class="btn primary" data-act="play">Play it here</button>'
+        : ""}
+
+      ${e.site
+        ? `<a class="btn primary" href="${esc(e.site)}" target="_blank" rel="noopener noreferrer">Visit website</a>`
         : ""}
 
       <button type="button" class="btn" data-act="copy">Copy code</button>

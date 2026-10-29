@@ -43,6 +43,7 @@ h1{font-size:clamp(2.8rem,8vw,5rem);font-weight:800;letter-spacing:-.045em}
 .tag.javascript{background:rgba(245,217,107,.16);color:#c9a400}
 .tag.python{background:rgba(76,141,255,.16);color:var(--blue)}
 .tag.luau{background:rgba(196,167,255,.18);color:#8b5cf6}
+.tag.html{background:rgba(255,179,71,.16);color:var(--accent)}
 .level{color:var(--muted);border:1px solid var(--line)}
 .card h3{font-size:1.35rem}
 .card>p{margin:6px 0 14px;color:var(--muted);font-size:.95rem}
