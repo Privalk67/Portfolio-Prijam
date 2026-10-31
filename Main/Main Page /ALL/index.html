@@ -16,7 +16,9 @@
 <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Hanken+Grotesk:wght@400;500;600&family=JetBrains+Mono&display=swap">
 <script>try{var t=localStorage.getItem("theme");if(t)document.documentElement.dataset.theme=t}catch(e){}</script>
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="talkshow.css">
 <script src="script.js" defer></script>
+<script src="talkshow.js" defer></script>
 </head>
 <body>
 <a class="skip" href="#main">Skip to content</a>
@@ -156,6 +158,7 @@
       <p>A few accomplishments from school and my learning journey.</p>
     </div>
     <ul class="wins">
+      <li><span class="ic" aria-hidden="true">🎤</span><div><h3>Participated in TalkShow</h3><p>Recorded the talk and shared on youtube to inspire others.</p><button type="button" class="more" data-video="CoeDfIRcELQ" data-title="Prijam Talkshow">Click for more</button></div></li>
       <li><span class="ic" aria-hidden="true">⌘</span><div><h3>Class-level Python debugging competition</h3><p>Won by identifying and fixing coding errors.</p></div></li>
       <li><span class="ic" aria-hidden="true">🥇</span><div><h3>Class race, Grade 7 and Grade 8</h3><p>Took 1st place in both years.</p></div></li>
       <li><span class="ic" aria-hidden="true">&lt;/&gt;</span><div><h3>Web development practice</h3><p>Built webpages with HTML and CSS while developing my design skills.</p></div></li>
@@ -199,7 +202,7 @@
         <div class="socials">
           <a href="https://github.com/Privalk67" target="_blank" rel="noopener noreferrer">GitHub</a>
           <a href="https://www.youtube.com/@Privalk1" target="_blank" rel="noopener noreferrer">YouTube</a>
-          <a href="https://www.instagram.com/prijamnyaupane0/" target="_blank" rel="noopener noreferrer">Instagram</a>
+          <a href="https://www.instagram.com/prijam.dev/" target="_blank" rel="noopener noreferrer">Instagram</a>
         </div>
       </div>
       <a href="code.html" class="btn primary">Visit the Code Library</a>
@@ -216,5 +219,13 @@
     <a href="#home" class="back-top">Back to top</a>
   </div>
 </footer>
+
+<dialog id="videoModal" class="vmodal" aria-labelledby="videoTitle">
+  <div class="vmodal-bar">
+    <h3 id="videoTitle">Video</h3>
+    <button type="button" class="vclose" aria-label="Close video">✕</button>
+  </div>
+  <div class="vframe"></div>
+</dialog>
 </body>
 </html>
